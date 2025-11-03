@@ -1,0 +1,202 @@
+/* ---------------------
+ * Estilos Base (Mobile First)
+ * --------------------- */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --border-color: #dee2e6;
+    --font-color: #343a40;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+/* ---------------------
+ * Estilos del Formulario (fieldset)
+ * --------------------- */
+fieldset {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 10px;
+}
+
+label {
+    display: block; /* Hace que la etiqueta ocupe su propia línea */
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no cambie el ancho total */
+}
+
+/* Eliminar el margin por defecto de <p> y usar flex para los inputs/botones */
+p {
+    margin: 10px 0;
+}
+
+
+/* ---------------------
+ * Estilos de Botones
+ * --------------------- */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Por defecto, ancho completo en mobile */
+    margin-top: 5px; /* Pequeño margen para separar botones */
+}
+
+#btnAdd {
+    background-color: var(--success-color);
+    color: white;
+}
+
+#btnAdd:hover {
+    background-color: #1e7e34;
+}
+
+#btnlist {
+    background-color: var(--primary-color);
+    color: white;
+    margin-bottom: 20px;
+}
+
+#btnlist:hover {
+    background-color: #0056b3;
+}
+
+
+/* ---------------------
+ * Media Query para Desktop (a partir de 768px) 🖥️
+ * --------------------- */
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+    
+    /* Limitar el ancho máximo del contenido en desktop */
+    h1 {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    fieldset {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px;
+    }
+
+    /* Los botones dejan de ser de ancho completo en desktop */
+    button {
+        width: auto;
+        margin-right: 10px;
+    }
+    
+    /* Agrupar los botones y alinearlos a la derecha dentro de su <p> */
+    p:last-of-type {
+        text-align: right;
+    }
+}
+
+/* Estilos para la lista de tareas */
+#taskList {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto; /* Centrar en desktop */
+}
+
+.task-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex; /* Para alinear el contenido y futuros botones */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.task-item span {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+}
+
+/* Puedes añadir un estilo para separar la lista de la forma */
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Modificación en task-item para alinear elementos */
+.task-item {
+    /* ... (dejar estilos anteriores) ... */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre los elementos (checkbox, texto, status) */
+}
+
+.task-item span:first-of-type {
+    flex-grow: 1; /* El texto ocupa el espacio central */
+}
+
+/* Estilos para el Checkbox */
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    /* Esto lo hace menos responsivo, pero más estético: */
+    min-width: 20px; 
+}
+
+/* Estilos para el Status Badge (Opcional, pero recomendado) */
+.status-badge {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: white;
+}
+
+.status-badge.pendiente {
+    background-color: var(--primary-color); /* Azul */
+}

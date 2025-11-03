@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="Manifest" href="/manifest.json">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>gestion de tareas</h1>
+    <fieldset>
+        <legend>Nueva Tarea</legend>
+        <label for="nombre">Nombre</label>
+        <p><input type="text" id="nombre"></p>
+        <p>
+            <label for="fecha">fecha</label>
+            <input type="date" id="fecha">
+        </p>
+        <p>
+            <button type="button" id="btnAdd">Agregar Tarea</button>
+        </p>
+
+
+    </fieldset>
+
+    <hr>
+    <h2>Lista de Tareas</h2>
+    <ul id="taskList">
+    </ul>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
