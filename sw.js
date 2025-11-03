@@ -3,16 +3,11 @@
 const CACHE_NAME = 'tareas-v1';
 
 const urlsToCache = [
-    // La ruta raíz del proyecto en un subdirectorio (ej: /pouchPorject/)
     './', 
-    // Archivos locales (usando './' como buena práctica relativa)
     './index.html',
     './styles.css',
     './main.js',
-    './manifest.json', // ¡Añadir el manifiesto es crucial para la PWA!
-    './images/icons/icon1.png', 
-    './images/icons/icon2.png',
-    
+    './manifest.json', 
     'https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js' 
 ];
 
