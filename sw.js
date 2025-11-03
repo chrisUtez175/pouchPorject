@@ -1,14 +1,20 @@
 // sw.js
 
 const CACHE_NAME = 'tareas-v1';
-// Lista de archivos estáticos que queremos guardar en caché
+
 const urlsToCache = [
-    '/', // El archivo HTML principal
-    'index.html',
-    'styles.css',
-    'main.js',
-    'https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js' // La librería externa
-    // Si tienes un favicon, agrégalo aquí
+    // La ruta raíz del proyecto en un subdirectorio (ej: /pouchPorject/)
+    './', 
+    // Archivos locales (usando './' como buena práctica relativa)
+    './index.html',
+    './styles.css',
+    './main.js',
+    './manifest.json', // ¡Añadir el manifiesto es crucial para la PWA!
+    './images/icon-192x192.png', // Añadir iconos si existen
+    './images/icon-512x512.png',
+    
+    // Librerías externas (deben ser rutas absolutas completas)
+    'https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js' 
 ];
 
 // 1. EVENTO INSTALL: Cachar los archivos estáticos
