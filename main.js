@@ -4,6 +4,19 @@ let btnAdd;
 let inputName;
 let inputFecha;
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => {
+                console.log('Service Worker registrado con éxito:', reg.scope);
+            })
+            .catch(err => {
+                console.error('Fallo en el registro del Service Worker:', err);
+            });
+    });
+}
+// ... (resto de tu código) ...
+
 document.addEventListener('DOMContentLoaded', () => {
     inputName = document.getElementById('nombre');
     inputFecha = document.getElementById('fecha');
