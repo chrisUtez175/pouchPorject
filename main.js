@@ -4,9 +4,11 @@ let btnAdd;
 let inputName;
 let inputFecha;
 
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        // Opción 1 (Recomendada para subdirectorios de GitHub Pages): Usar una ruta relativa
+        navigator.serviceWorker.register('./sw.js') 
             .then(reg => {
                 console.log('Service Worker registrado con éxito:', reg.scope);
             })
@@ -15,8 +17,6 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
-// ... (resto de tu código) ...
-
 document.addEventListener('DOMContentLoaded', () => {
     inputName = document.getElementById('nombre');
     inputFecha = document.getElementById('fecha');
